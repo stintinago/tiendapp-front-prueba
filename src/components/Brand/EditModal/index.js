@@ -6,7 +6,7 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 
-function EditModal(props) {
+function EditBrandModal(props) {
 
     return (
         <Modal show={props.show} onHide={props.handleShow}>
@@ -53,4 +53,4 @@ function EditModal(props) {
     );
 }
 
-export default EditModal;
+export default EditBrandModal;

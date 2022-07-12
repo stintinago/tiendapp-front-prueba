@@ -5,11 +5,22 @@ import Row from 'react-bootstrap/Row';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import EditModal from './EditModal';
+import axios from 'axios';
 
 function Brand() {
+
     const [show, setShow] = useState(false);
 
     const handleShow = () => setShow(!show);
+
+    const [brands, setBrands] = useState([])
+
+    const fetchBrands = async () => {
+        await axios.get(`http://localhost:8000/api/brands`).then(({data})=>{
+            setBrands(data)
+        })
+    }
+
     return (
         <>
             <Container className="mt-4">
@@ -25,7 +36,7 @@ function Brand() {
                         <tr>
                             <td>Mark</td>
                             <td>Otto</td>
-                            <td><Button onClick={handleShow}>Edit</Button><Button className="mx-2" variant="danger">Delete</Button></td>
+                            <td><Button onClick={null}>Edit</Button><Button className="mx-2" variant="danger">Delete</Button></td>
                         </tr>
                         <tr>
                             <td>Jacob</td>
@@ -40,7 +51,7 @@ function Brand() {
                     </tbody>
                 </Table>
             </Container>
-            <EditModal show={show} handleShow={handleShow}/>
+            
         </>
     )
 }
