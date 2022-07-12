@@ -106,7 +106,7 @@ function Home() {
 
         </Row>
       </Container>
-      <EditModal show={show} handleShow={handleShow} />
+      
     </>
   )
 }

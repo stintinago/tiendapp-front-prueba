@@ -193,7 +193,7 @@ function EditProduct() {
                 </Form.Group>
               </Row>
   
-              <Button onClick={updateProduct} type="submit">Add product</Button>
+              <Button onClick={updateProduct} type="submit">Edit product</Button>
             </Form>
           </Container>
         </div>

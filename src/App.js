@@ -6,9 +6,8 @@ import AddProudct from './components/AddProduct';
 import Layout from './components/Layout';
 import AddBrand from "./components/AddBrand";
 import Brand from "./components/Brand";
-import EditBrandModal from "./components/Brand/EditModal";
-import EditModal from "./components/Home/EditModal";
 import EditProduct from "./components/EditProduct";
+import EditBrand from "./components/EditBrand";
 
 
 export default function App() {
@@ -20,7 +19,7 @@ export default function App() {
           <Route path="AddProudct" element={<AddProudct />} />
           <Route path="AddBrand" element={<AddBrand />} />
           <Route path="Brand" element={<Brand />} />
-          <Route path="EditBrand" element={<EditBrandModal/>} />
+          <Route path="EditBrand" element={<EditBrand/>} />
           <Route path="EditProduct/:id" element={<EditProduct />} />
         </Route>
       </Routes>

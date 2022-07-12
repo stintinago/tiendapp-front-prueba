@@ -6,7 +6,8 @@ import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import EditModal from './EditModal';
 import axios from 'axios';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 function Brand() {
 
@@ -43,7 +44,7 @@ function Brand() {
           return;
         }
     
-        await axios.delete(`http://localhost:8000/api/products/${id}`).then(({ data }) => {
+        await axios.delete(`http://localhost:8000/api/brands/${id}`).then(({ data }) => {
           Swal.fire({
             icon: "success",
             text: data.message
@@ -74,7 +75,7 @@ function Brand() {
                                 <tr key={key}>
                                     <td>{row.name}</td>
                                     <td>{row.reference}</td>
-                                    <td><Button >Edit</Button><Button onClick={()=>deleteBrand(row.id)} className="mx-2" variant="danger">Delete</Button></td>
+                                    <td><Link to={`/EditBrand/${row.id}`}><Button >Edit</Button></Link><Button onClick={()=>deleteBrand(row.id)} className="mx-2" variant="danger">Delete</Button></td>
                                 </tr>
                             )) : <h1>No data</h1>
                     }
