@@ -19,7 +19,7 @@ export default function App() {
           <Route path="AddProudct" element={<AddProudct />} />
           <Route path="AddBrand" element={<AddBrand />} />
           <Route path="Brand" element={<Brand />} />
-          <Route path="EditBrand" element={<EditBrand/>} />
+          <Route path="EditBrand/:id" element={<EditBrand/>} />
           <Route path="EditProduct/:id" element={<EditProduct />} />
         </Route>
       </Routes>

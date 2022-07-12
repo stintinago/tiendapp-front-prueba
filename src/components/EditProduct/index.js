@@ -50,7 +50,6 @@ function EditProduct() {
         e.preventDefault();
 
         const formData = new FormData()
-        formData.append('_method', 'PATCH');
         formData.append('name', name);
         formData.append('size', size);
         formData.append('brand_id', brand);
@@ -58,7 +57,7 @@ function EditProduct() {
         formData.append('boarding', boarding);
         formData.append('observations', observations);
 
-        await axios.post(`http://localhost:8000/api/products/${id}`, formData).then(({ data }) => {
+        await axios.post(`http://localhost:8000/api/productsUpdate/${id}`, formData).then(({ data }) => {
             Swal.fire({
                 icon: "success",
                 text: data.message
@@ -88,7 +87,7 @@ function EditProduct() {
     
     return (
       <>
-        <div>
+        <div className="form-wrapper">
   
           {
             Object.keys(validationError).length > 0 && (
