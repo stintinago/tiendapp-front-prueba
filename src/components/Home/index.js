@@ -84,7 +84,8 @@ function Home() {
                       <Card.Title>{row.name}</Card.Title>
                       <Card.Text>
                         Size {row.size}
-                        {row.options}
+                        <br/>
+                        {row.observations}
                       </Card.Text>
                     </Card.Body>
                     <ListGroup className="list-group-flush">

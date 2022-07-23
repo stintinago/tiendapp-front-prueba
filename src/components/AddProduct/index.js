@@ -37,7 +37,8 @@ function AddProudct() {
     await axios.post(`http://localhost:8000/api/products`, formData).then(({ data }) => {
       Swal.fire({
         icon: "success",
-        text: data.message
+        text: data.message,
+        button: "OK!"
       })
       navigate("/")
     }).catch(({ response }) => {
@@ -46,7 +47,7 @@ function AddProudct() {
       } else {
         Swal.fire({
           text: response.data.message,
-          icon: "error"
+          icon: "error",
         })
       }
     })
@@ -105,7 +106,7 @@ function AddProudct() {
               </Form.Group>
 
               <Form.Group as={Col} md="4" controlId="Size">
-                <Form.Label>Product brand</Form.Label>
+                <Form.Label>Product size</Form.Label>
                 <Form.Select value={size} required onChange={(event) => { setSize(event.target.value) }}>
                   <option></option>
                   <option>S</option>
