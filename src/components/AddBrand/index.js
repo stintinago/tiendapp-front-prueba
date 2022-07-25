@@ -60,6 +60,23 @@ function AddBrand() {
 
   return (
     <>
+      {
+        Object.keys(validationError).length > 0 && (
+          <div className="row">
+            <div className="col-12">
+              <div className="alert alert-danger">
+                <ul className="mb-0">
+                  {
+                    Object.entries(validationError).map(([key, value]) => (
+                      <li key={key}>{value}</li>
+                    ))
+                  }
+                </ul>
+              </div>
+            </div>
+          </div>
+        )
+      }
       <Container className="mt-4">
 
         <Form noValidate validated={validated} onSubmit={handleSubmit}>
@@ -68,16 +85,16 @@ function AddBrand() {
             <Form.Group as={Col} md="4">
               <Form.Label>Brand Name</Form.Label>
 
-                <Form.Control
-                  
-                  value={name}
-                  onChange={(event) => setName(event.target.value)}
-                  required
-                  type="text"
-                />
-                <Form.Control.Feedback type="invalid">
-                  Please type a name.
-                </Form.Control.Feedback>
+              <Form.Control
+
+                value={name}
+                onChange={(event) => setName(event.target.value)}
+                required
+                type="text"
+              />
+              <Form.Control.Feedback type="invalid">
+                Please type a name.
+              </Form.Control.Feedback>
 
             </Form.Group>
 
